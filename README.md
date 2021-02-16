@@ -8,11 +8,24 @@ To runn python you need a python runtime. This is a basically an interpreter for
 You don't really need to know anything about this. But what is inportant is understanding that there are many different ways to setup python 
 on your machine.
 
-### System python
+find out what version of python you have with
+
+```
+python --version
+```
+
+you can also find out some information about where python runtime is located with 
+```
+which python
+```
+This will help you identify which python you are currently using.
+
+### System python (not recommended)
 
 you'll find that mac comes with a pre-shipped version of python. Generally this gets in the way and its best to ignore it.
 
-### pyenv 
+
+### pyenv (not recommended)
 
 pyenv is a good way but a little restrictive and hasn;t really developed into industry standard. It has a few problems with how it sets up virtual enviroments. IT acutally uses the base system python as a python runtime and then builds virtual envs ontop of them (not the best)
 
