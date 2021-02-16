@@ -1,6 +1,18 @@
 # python-setup
 
-Setup for python
+Setup for python.
+
+## examples with makefile
+
+I've added a Makefile so you can have a look at what commands do what without having to do much.
+
+To run each example in the make file just execute
+
+```
+make <name of task>
+e.g.
+make piplist
+```
 
 ## Python Runtime
 
@@ -15,9 +27,11 @@ python --version
 ```
 
 you can also find out some information about where python runtime is located with 
+
 ```
 which python
 ```
+
 This will help you identify which python you are currently using.
 
 ### System python (not recommended)
