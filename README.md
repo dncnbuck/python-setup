@@ -103,15 +103,31 @@ python -m venv .my-virtual-env
 ```
 This will create a hidden directory called `.my-virtual-env` in the current directory. 
 
+### Activate the environment
+
 You can activate this venv here by sourcing the activate file
 ```
 . ./.my-virtual-env/bin/activate
 ```
+
 once activated using `python` and `pip` will use those related to the virtual env.
 
-or just use the python binary or related pip binary in this environment with
+You can also  just use the python binary or related pip binary in this environment with
 ```
-. ./.my-virtual-env/bin/python
+./.my-virtual-env/bin/python
+```
 or
-. ./.my-virtual-env/bin/pip
 ```
+./.my-virtual-env/bin/pip
+```
+
+Make sure you are not in an activated virtual environment by executing `deactivate` and checkout what happens if you execute 
+```
+./.my-virtual-env/bin/pip list
+```
+versus
+```
+pip list
+```
+
+You should see the difference in the libraries installed in virtual env verses those installed in the global python runtime environment.
