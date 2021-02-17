@@ -1,25 +1,27 @@
 .PHONY : clean
 
-all : build/.my-virtual-env/bin/basic-lib
+all : build/.venv/bin/basic-lib
 
-build/.my-virtual-env :
-	python3 -m venv build/.my-virtual-env
+build/.venv :
+	python3 -m venv build/.venv
 
 piplist : install
-	build/.my-virtual-env/bin/pip list
+	build/.venv/bin/pip list
 
-build/.my-virtual-env/bin/basic-lib : build/.my-virtual-env
-	build/.my-virtual-env/bin/pip install -e basic-lib
+build/.venv/bin/basic-lib : build/.venv
+	build/.venv/bin/pip install -e basic-lib
 
-build/.my-virtual-env/bin/flake8 : build/.my-virtual-env/bin/basic-lib
-	build/.my-virtual-env/bin/pip install flake8
+build/.venv/bin/flake8 : build/.venv/bin/basic-lib
+	build/.venv/bin/pip install flake8
 
-build/.my-virtual-env/bin/coverage : build/.my-virtual-env/bin/basic-lib
-	build/.my-virtual-env/bin/pip install coverage
+build/.venv/bin/coverage : build/.venv/bin/basic-lib
+	build/.venv/bin/pip install coverage
 
-test : build/.my-virtual-env/bin/basic-lib build/.my-virtual-env/bin/flake8 build/.my-virtual-env/bin/coverage
-	build/.my-virtual-env/bin/flake8 --max-line-length 120 basic-lib
-	build/.my-virtual-env/bin/coverage run -m pytest
+
+test : build/.venv/bin/basic-lib build/.venv/bin/flake8 build/.venv/bin/coverage
+	build/.venv/bin/pip install pytest
+	build/.venv/bin/flake8 --max-line-length 120 basic-lib
+	build/.venv/bin/coverage run -m pytest
 
 clean :
 	rm -rf build/

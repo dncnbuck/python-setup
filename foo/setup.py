@@ -6,7 +6,7 @@ with open('version', 'r') as properties_file:
 version = re.search(r'version=([0-9.\-A-Za-z]+)', properties).group(1)
 
 setup(
-    name='basic-lib',
+    name='foo',
     version=version,
     description="Python project",
     classifiers=[],
@@ -23,8 +23,8 @@ setup(
     zip_safe=False,
     install_requires=[
         # specify your requirements here:
-        'numpy',
-        'scikit-learn==0.16.0',
+        'jupyter',
+        'requests'
     ],
     extras_require={
         'dev': [
