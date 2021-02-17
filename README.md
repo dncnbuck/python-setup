@@ -1,6 +1,6 @@
 # python-setup
 
-Setup for python.
+Setup for Python.
 
 ## examples with makefile
 
