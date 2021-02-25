@@ -55,12 +55,13 @@ segments = []
 tracks = []
 labels = []
 durations = []
-annotation_data = {}
+annotion_data = {}
 for segment, track, label in annotation.itertracks(yield_label=True):
-    print("{} {} {}".format(segment, track, label))
-    annotation_data[label] = ""
+    print("{} {} {} {}".format(segment, track, label, duration))
+    annotion_data[label] = {"segment": segment, "track": track, "duration": duration}
     segments.append(segment)
     tracks.append(track)
+    durations.append(duration)
     labels.append(label)
 
 for key, value in annotation_data.items():
