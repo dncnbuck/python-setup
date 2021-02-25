@@ -54,6 +54,7 @@ data = []
 segments = []
 tracks = []
 labels = []
+durations = []
 annotation_data = {}
 for segment, track, label in annotation.itertracks(yield_label=True):
     print("{} {} {}".format(segment, track, label))
@@ -66,7 +67,7 @@ for key, value in annotation_data.items():
     print("{} {}".format(key, value))
     print("{} {} {}".format(key, value.get('segment'), value.get('track')))
 
-data=[(segment, track, label)]
+data=[(segments, tracks, labels)]
 
 with open('test_dia.csv','w') as out:
     csv_out=csv.writer(out)
